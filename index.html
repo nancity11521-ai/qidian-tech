@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>奇点脉冲科技 - AIBOX · AIPC · AI工作站 | 智能算力解决方案</title>
+<meta name="description" content="奇点脉冲科技（深圳）有限公司，专注AIBOX智能算力盒子、AIPC个人智能计算机、AI工作站及定制服务，广泛应用于机器视觉、智能制造、科研计算等领域。">
+<meta name="keywords" content="AIBOX, AIPC, AI工作站, Jetson, 边缘计算, 智能算力, AI硬件, 深圳">
+<meta property="og:title" content="奇点脉冲科技 - AIBOX · AIPC · AI工作站">
+<meta property="og:description" content="奇点脉冲科技，专注AI硬件研发与制造，产品涵盖AIBOX算力盒子、AIPC、AI工作站。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+:root{--p:#5B5FEF;--p2:#4040d0;--p3:#7B80FF;--a:#FF6B35;--d:#0D0F1A;--d2:#141729;--d3:#1C2035;--t:#E8EAF0;--m:#8B90A8;--b:rgba(255,255,255,.08)}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--d);color:var(--t);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+.section{padding:100px 0}
+.label{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--p3);margin-bottom:16px}
+.label::before{content:'';width:24px;height:2px;background:var(--p);border-radius:2px}
+.title{font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.15;margin-bottom:20px;background:linear-gradient(135deg,#fff,#a0a8d0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.desc{font-size:17px;color:var(--m);max-width:560px;line-height:1.7}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;border:none;transition:all .25s;cursor:pointer}
+.btn-p{background:var(--p);color:#fff;box-shadow:0 4px 20px rgba(91,95,239,.35)}
+.btn-p:hover{background:var(--p2);transform:translateY(-2px);box-shadow:0 8px 30px rgba(91,95,239,.5)}
+.btn-o{background:transparent;color:var(--t);border:1.5px solid var(--b)}
+.btn-o:hover{border-color:var(--p);color:var(--p3);background:rgba(91,95,239,.08)}
+.btn-w{background:#fff;color:var(--d)}
+.btn-w:hover{background:#f0f0ff;transform:translateY(-2px)}
+.lang-bar{border-bottom:1px solid var(--b);padding:10px 0;background:var(--d2);font-size:13px;color:var(--m)}
+.lang-bar-inner{display:flex;align-items:center;justify-content:flex-end;gap:20px}
+.lang-bar a{color:var(--m);transition:color .2s}
+.lang-bar a:hover{color:var(--t)}
+header{position:fixed;top:32px;left:0;right:0;z-index:1000;background:rgba(13,15,26,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--b)}
+.h-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800}
+.logo-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:9px;overflow:hidden;transition:transform .2s ease,filter .2s ease}
+.logo-icon img{width:100%;height:100%;object-fit:cover;display:block}
+.logo:hover .logo-icon{transform:scale(1.05);filter:drop-shadow(0 0 10px rgba(123,128,255,.5))}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--m);transition:all .2s}
+.nav a:hover{color:var(--t);background:rgba(255,255,255,.06)}
+.nav a.active{color:var(--p3);background:rgba(91,95,239,.12)}
+.h-actions{display:flex;align-items:center;gap:12px}
+.h-actions .btn{padding:9px 20px;font-size:14px}
+.nav-tog{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.nav-tog span{width:22px;height:2px;background:var(--t);border-radius:2px}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:100px}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(91,95,239,.15),transparent 70%),radial-gradient(ellipse 50% 40% at 80% 50%,rgba(255,107,53,.06),transparent 60%),var(--d)}
+.hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(91,95,239,.2),transparent 70%);filter:blur(60px)}
+.hero-content{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.h-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:50px;background:rgba(91,95,239,.12);border:1px solid rgba(91,95,239,.25);font-size:13px;font-weight:500;color:var(--p3);margin-bottom:24px}
+.h-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--p3);animation:pulse 2s infinite}
+.h1{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.08;letter-spacing:-1.5px;margin-bottom:24px}
+.gt{background:linear-gradient(135deg,var(--p3),var(--a));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.h-desc{font-size:18px;color:var(--m);line-height:1.7;margin-bottom:36px;max-width:480px}
+.h-actions2{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.h-stats{display:flex;gap:40px;margin-top:48px}
+.h-stat-val{font-size:32px;font-weight:800;color:#fff}
+.h-stat-lbl{font-size:13px;color:var(--m);margin-top:4px}
+.h-card{width:100%;max-width:520px;background:var(--d2);border:1px solid var(--b);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.h-card-hdr{padding:20px 24px;border-bottom:1px solid var(--b);display:flex;align-items:center;gap:12px}
+.h-card-dots{display:flex;gap:6px}
+.h-card-dot{width:10px;height:10px;border-radius:50%}
+.h-card-dot:nth-child(1){background:#FF5F57}
+.h-card-dot:nth-child(2){background:#FEBC2E}
+.h-card-dot:nth-child(3){background:#28C840}
+.h-card-title{font-size:13px;color:var(--m);margin-left:8px}
+.h-card-body{padding:24px}
+@keyframes bounce{0%,80%,100%{transform:scale(1);opacity:.4}40%{transform:scale(1.3);opacity:1}}
+.bubble{padding:14px 18px;border-radius:14px;margin-bottom:12px;font-size:14px;line-height:1.5;max-width:85%}
+.bubble.user{background:var(--p);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+.bubble.bot{background:var(--d3);color:var(--t);border-bottom-left-radius:4px}
+.bubble.bot .typing{display:flex;gap:4px;align-items:center;padding-top:4px}
+.bubble.bot .typing span{width:6px;height:6px;border-radius:50%;background:var(--m);animation:bounce 1.4s infinite}
+.bubble.bot .typing span:nth-child(2){animation-delay:.2s}
+.bubble.bot .typing span:nth-child(3){animation-delay:.4s}
+.features{background:var(--d2);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.feature-card{padding:32px;border-radius:12px;background:var(--d);border:1px solid var(--b);transition:all .3s}
+.feature-card:hover{border-color:rgba(91,95,239,.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(91,95,239,.12)}
+.feature-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.fi-blue{background:rgba(91,95,239,.15)}
+.fi-orange{background:rgba(255,107,53,.15)}
+.fi-green{background:rgba(40,200,64,.15)}
+.fi-purple{background:rgba(168,85,247,.15)}
+.fi-red{background:rgba(239,68,68,.15)}
+.fi-cyan{background:rgba(34,211,238,.15)}
+.feature-title{font-size:18px;font-weight:700;margin-bottom:12px}
+.feature-desc{font-size:14px;color:var(--m);line-height:1.7}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.product-card{border-radius:12px;overflow:hidden;background:var(--d2);border:1px solid var(--b);transition:all .3s}
+.product-card:hover{border-color:rgba(91,95,239,.3);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.product-img{height:220px;background:linear-gradient(135deg,var(--d3),var(--d));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:16px}
+.product-img img{max-width:90%;max-height:90%;object-fit:contain;position:relative;z-index:1;transition:transform .4s cubic-bezier(.2,0,0,1)}
+.product-card:hover .product-img img{transform:scale(1.06) translateY(-4px)}
+.product-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(13,15,26,.6) 100%);pointer-events:none;z-index:1}
+.product-tag{position:absolute;top:16px;left:16px;z-index:2;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;background:var(--p);color:#fff}
+.pt-hot{background:var(--a)}
+.pt-new{background:#28C840}
+.product-info{padding:24px}
+.product-name{font-size:18px;font-weight:700;margin-bottom:8px}
+.product-desc{font-size:14px;color:var(--m);margin-bottom:20px;line-height:1.6}
+.product-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.product-spec{padding:4px 10px;border-radius:6px;font-size:12px;color:var(--m);background:var(--d3);border:1px solid var(--b)}
+.product-actions{display:flex;gap:12px}
+.product-actions .btn{flex:1;justify-content:center;padding:10px;font-size:14px}
+.how{background:var(--d2);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:56px;position:relative}
+.steps::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--p),var(--a),var(--p),transparent);opacity:.3}
+.step{text-align:center;position:relative}
+.step-num{width:72px;height:72px;border-radius:50%;background:var(--d);border:2px solid var(--p);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:var(--p3);margin:0 auto 24px;box-shadow:0 0 30px rgba(91,95,239,.2)}
+.step-title{font-size:17px;font-weight:700;margin-bottom:10px}
+.step-desc{font-size:14px;color:var(--m);line-height:1.6}
+.cta-banner{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--p2),#2a2ab8,var(--p));border-radius:24px;padding:80px 60px;text-align:center}
+.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.08),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,107,53,.1),transparent 50%)}
+.cta-banner h2{font-size:clamp(28px,4vw,44px);font-weight:900;margin-bottom:16px;position:relative}
+.cta-banner p{font-size:17px;opacity:.85;margin-bottom:36px;position:relative}
+.cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative}
+.cta-banner .btn-w{font-size:16px;padding:14px 32px}
+.cta-banner .btn-o{font-size:16px;padding:14px 32px;border-color:rgba(255,255,255,.4);color:#fff}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.blog-card{border-radius:12px;overflow:hidden;background:var(--d2);border:1px solid var(--b);transition:all .3s}
+.blog-card:hover{transform:translateY(-4px);border-color:rgba(91,95,239,.25)}
+.blog-img{height:180px;background:linear-gradient(135deg,var(--d3),var(--d));display:flex;align-items:center;justify-content:center;font-size:48px}
+.blog-info{padding:24px}
+.blog-meta{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+.blog-tag{font-size:12px;font-weight:600;color:var(--p3)}
+.blog-date{font-size:12px;color:var(--m)}
+.blog-title{font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.4}
+.blog-excerpt{font-size:14px;color:var(--m);line-height:1.6}
+footer{background:var(--d2);border-top:1px solid var(--b);padding:80px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:60px}
+.footer-brand p{font-size:14px;color:var(--m);line-height:1.7;margin-top:16px;max-width:280px}
+.footer-col-title{font-size:14px;font-weight:700;margin-bottom:20px;color:var(--t)}
+.footer-links{display:flex;flex-direction:column;gap:12px}
+.footer-links a{font-size:14px;color:var(--m);transition:color .2s}
+.footer-links a:hover{color:var(--t)}
+.footer-newsletter p{font-size:14px;color:var(--m);margin-bottom:16px}
+.newsletter-form{display:flex;gap:8px}
+.newsletter-form input{flex:1;padding:10px 14px;border-radius:8px;background:var(--d3);border:1px solid var(--b);color:var(--t);font-size:14px;outline:none}
+.newsletter-form input:focus{border-color:var(--p)}
+.newsletter-form button{padding:10px 18px;border-radius:8px;background:var(--p);border:none;color:#fff;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.newsletter-form button:hover{background:var(--p2)}
+.footer-bottom{border-top:1px solid var(--b);padding:24px 0;display:flex;align-items:center;justify-content:space-between}
+.footer-bottom p{font-size:13px;color:var(--m)}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:36px;height:36px;border-radius:8px;background:var(--d3);border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:16px;transition:all .2s}
+.footer-social a:hover{background:var(--p);border-color:var(--p)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+.float-el{position:absolute;border-radius:50%;filter:blur(40px);opacity:.15;animation:float 8s ease-in-out infinite}
+@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center}.h-desc{margin:0 auto 36px}.h-actions2{justify-content:center}.h-stats{justify-content:center}.hero-visual{display:none}.features-grid,.products-grid,.blog-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nav{display:none}.nav-tog{display:flex}.h-actions .btn-login{display:none}.features-grid,.products-grid,.blog-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.cta-banner{padding:48px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:16px;text-align:center}.section{padding:64px 0}}</style>
+</head>
+<body><div class="lang-bar"><div class="container lang-bar-inner"><span>奇点脉冲科技</span><span>|</span><a href="#">EN</a><span>|</span><a href="mailto:ysb@gmkagent.com">ysb@gmkagent.com</a></div></div>
+<header id="header"><div class="container h-inner">
+<a href="#" class="logo"><div class="logo-icon"><img src="images/logo.png" alt="奇点脉冲科技"></div><span>奇点脉冲科技<strong style="color:var(--p3)"> · </strong>启智未来</span></a>
+<nav class="nav" id="desktopNav">
+<a href="#home" class="active">首页</a><a href="#features">核心能力</a><a href="#products">产品中心</a><a href="#about">关于我们</a><a href="#blog">资讯博客</a><a href="#contact">联系我们</a>
+</nav>
+<div class="h-actions">
+<a href="#" class="btn btn-o btn-login">登录</a><a href="#" class="btn btn-p">获取报价</a>
+</div>
+<div class="nav-tog" id="navToggle" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+</div></header>
+<section class="hero" id="home">
+<div class="hero-bg"></div><div class="hero-grid"></div><div class="hero-glow"></div>
+<div class="float-el" style="width:300px;height:300px;background:var(--p);top:10%;right:10%;"></div>
+<div class="float-el" style="width:200px;height:200px;background:var(--a);bottom:20%;left:5%;animation-delay:-4s;"></div>
+<div class="container hero-content">
+<div class="hero-text">
+<div class="h-badge"><span class="h-badge-dot"></span>专注 AIBOX · AIPC · 工作站 研发制造</div>
+<h1 class="h1">智能算力<br><span class="gt">从这里开始</span></h1>
+<p class="h-desc">奇点脉冲科技是领先的 AI 硬件与解决方案提供商，产品涵盖 AIBOX 智能算力盒子、AIPC 个人智能计算机、工作站及定制服务，广泛应用于机器视觉、智能制造、科研计算等领域。</p>
+<div class="h-actions2">
+<a href="#products" class="btn btn-p" style="font-size:16px;padding:14px 32px;">浏览产品 →</a>
+<a href="#contact" class="btn btn-o" style="font-size:16px;padding:14px 28px;">联系我们</a>
+</div>
+<div class="h-stats">
+<div><div class="h-stat-val">500<span style="color:var(--p3)">+</span></div><div class="h-stat-lbl">企业客户</div></div>
+<div><div class="h-stat-val">99.9<span style="color:var(--p3)">%</span></div><div class="h-stat-lbl">服务可用性</div></div>
+<div><div class="h-stat-val">50<span style="color:var(--p3)">+</span></div><div class="h-stat-lbl">国家地区</div></div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="h-card">
+<div class="h-card-hdr"><div class="h-card-dots"><div class="h-card-dot"></div><div class="h-card-dot"></div><div class="h-card-dot"></div></div><span class="h-card-title">AIBOX 产品配置器</span></div>
+<div class="h-card-body">
+<div class="bubble user">推荐一款适合机器视觉的 AIBOX</div>
+<div class="bubble bot">根据你的需求，推荐 <strong>AIBOX-T2</strong>：<br>• 酷睿 Ultra X7 358H 处理器<br>• 180 TOPS 算力 / 最高 128GB 内存<br>• PCIe5.0、OCuLink、万兆网口，多路视频接入<br>• 宽温设计 -20℃~60℃<br><br>价格：<strong>¥11,800</strong>（含一年质保）<div class="typing"><span></span><span></span><span></span></div></div>
+<div class="bubble user">支持二次开发吗？</div>
+<div class="bubble bot">✅ 完整支持。我们提供 SDK（Python/C++）、Docker 镜像、ROS2 驱动，并附有 YOLO/TensorRT 部署示例代码。可安排远程技术对接。</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="features section" id="features">
+<div class="container">
+<div class="label">核心能力</div>
+<h2 class="title">为什么选择奇点脉冲？</h2>
+<p class="desc">深耕 AI 硬件行业多年，从产品研发到批量交付，提供全链路专业支持。</p>
+<div class="features-grid">
+<div class="feature-card"><div class="feature-icon fi-blue">🧠</div><h3 class="feature-title">强劲 AI 算力</h3><p class="feature-desc">搭载 NVIDIA Jetson、Intel Core Ultra、AMD Ryzen AI 等主流平台，提供从边缘到桌面的全谱系算力产品。</p></div>
+<div class="feature-card"><div class="feature-icon fi-orange">🔗</div><h3 class="feature-title">丰富接口扩展</h3><p class="feature-desc">GMSL2、CSI、MIPI、USB4、PCIe、PoE 等多种高速接口，适配工业相机、传感器、显示设备等各类外设。</p></div>
+<div class="feature-card"><div class="feature-icon fi-green">⚡</div><h3 class="feature-title">稳定工业级品质</h3><p class="feature-desc">宽温、防水、防尘、抗振动设计，通过 CE、FCC、RoHS 认证，满足工业自动化、车载、户外等严苛环境。</p></div>
+<div class="feature-card"><div class="feature-icon fi-purple">🔒</div><h3 class="feature-title">开源 &amp; 可定制</h3><p class="feature-desc">提供完整 SDK、Docker 镜像、驱动源码；支持 OEM/ODM 定制，从外观到配置按需打造差异化产品。</p></div>
+<div class="feature-card"><div class="feature-icon fi-red">📊</div><h3 class="feature-title">完善技术支持</h3><p class="feature-desc">原厂 FAE 远程调试，系统镜像定制，算法移植加速服务，帮助客户缩短 50%+ 开发周期。</p></div>
+<div class="feature-card"><div class="feature-icon fi-cyan">🚀</div><h3 class="feature-title">灵活交付能力</h3><p class="feature-desc">支持小批量试产到大货交付，标准品 7 天内发货，定制品 4~6 周交付，批量采购更具价格优势。</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="products">
+<div class="container">
+<div class="label">产品中心</div>
+<h2 class="title">AIBOX · AIPC · 工作站</h2>
+<p class="desc">覆盖 AI 推理、边缘计算、桌面创作、数据中心全场景的硬件产品矩阵。</p>
+<div class="products-grid">
+<div class="product-card">
+<div class="product-img" style="background:linear-gradient(135deg,#1a1f4e,#0d1025);"><img src="images/aibox.png" alt="AIBOX 智能算力盒子"><span class="product-tag pt-hot">热门</span></div>
+<div class="product-info"><div class="product-name">AIBOX 智能算力盒子</div><div class="product-desc">高性能端侧 AI 迷你主机，小巧低耗、算力强劲。搭载酷睿 Ultra X7 358H，整机 AI 算力 180 TOPS，支持 PCIe5.0、OCuLink 扩展、万兆网，适配本地大模型推理、机器视觉、边缘智能体部署。</div>
+<div class="product-specs"><span class="product-spec">180 TOPS</span><span class="product-spec">VC 均热散热</span><span class="product-spec">PCIe5.0</span><span class="product-spec">万兆网口</span></div>
+<div class="product-actions"><a href="#contact" class="btn btn-o">获取报价</a><a href="#contact" class="btn btn-p">申请样机</a></div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img" style="background:linear-gradient(135deg,#1f3a1a,#0d1a0d);"><img src="images/aipc.png" alt="AIPC 个人智能计算机"><span class="product-tag pt-new">新品</span></div>
+<div class="product-info"><div class="product-name">AIPC 个人智能计算机</div><div class="product-desc">搭载 Intel 第三代酷睿 Ultra 旗舰，XPU 融合架构，NPU 最高 50 TOPS，整机 AI 算力 180 TOPS，本地跑大模型、图生图，轻薄便携，面向开发者、创作者、科研人员。</div>
+<div class="product-specs"><span class="product-spec">NPU 50 TOPS</span><span class="product-spec">64GB 内存</span><span class="product-spec">RTX 4070</span><span class="product-spec">长效静音散热</span></div>
+<div class="product-actions"><a href="#contact" class="btn btn-o">获取报价</a><a href="#contact" class="btn btn-p">申请样机</a></div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img" style="background:linear-gradient(135deg,#3a1f1f,#1a0d0d);"><img src="images/workstation.png" alt="AI 工作站 &amp; 服务器"></div>
+<div class="product-info"><div class="product-name">AI 工作站 &amp; 服务器</div><div class="product-desc">高算力专业设备，支持多 GPU 互联、至强 6 处理器、512GB+ ECC 内存，适用于大模型训练、科学仿真、8K 渲染、AI 集群调度。</div>
+<div class="product-specs"><span class="product-spec">8×RTX 4090</span><span class="product-spec">双路 Xeon 6</span><span class="product-spec">512GB+ECC</span><span class="product-spec">液冷可选</span></div>
+<div class="product-actions"><a href="#contact" class="btn btn-o">获取报价</a><a href="#contact" class="btn btn-p">申请样机</a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="about section" id="about">
+<div class="container">
+<div class="label">关于我们</div>
+<h2 class="title">奇点脉冲科技</h2>
+<p class="desc">Qidian Maichong Technology (Shenzhen) Co., Ltd.</p>
+<div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+<div>
+<p style="font-size:16px;color:var(--m);line-height:1.9;margin-bottom:24px">奇点脉冲科技成立于深圳，是一家专注于 AI 硬件研发与制造的科技企业。公司核心团队来自 NVIDIA、Intel、华为等知名企业，在边缘计算、计算机视觉、高性能计算领域拥有十余年技术积累。</p>
+<p style="font-size:16px;color:var(--m);line-height:1.9;margin-bottom:24px">我们致力于将强大的 AI 算力产品化、工程化，让人工智能从云端走向边缘、从实验室走向生产线。旗下产品线覆盖 <strong style="color:var(--t)">AIBOX 智能算力盒子</strong>、<strong style="color:var(--t)">AIPC 个人智能计算机</strong> 及<strong style="color:var(--t)"> AI 工作站/服务器</strong>，广泛应用于智能制造、智慧城市、医疗影像、自动驾驶、科研教育等多个行业。</p>
+<p style="font-size:16px;color:var(--m);line-height:1.9">公司以"<strong style="color:var(--t)">让 AI 硬件更简单</strong>"为使命，坚持自主研发与开放合作，为全球客户提供高可靠、高性能、高性价比的 AI 算力解决方案。</p>
+</div>
+<div style="background:var(--d2);border:1px solid var(--b);border-radius:16px;padding:32px">
+<div style="margin-bottom:28px"><div style="font-size:12px;color:var(--m);margin-bottom:6px">公司名称</div><div style="font-size:15px;font-weight:600;color:var(--t)">奇点脉冲科技（深圳）有限公司</div><div style="font-size:13px;color:var(--m);margin-top:2px">Qidian Maichong Technology (Shenzhen) Co., Ltd.</div></div>
+<div style="margin-bottom:28px"><div style="font-size:12px;color:var(--m);margin-bottom:6px">公司地址</div><div style="font-size:15px;color:var(--t);line-height:1.6">深圳市龙华区大浪街道浪口社区<br>英泰路8号英泰科汇广场2号楼806</div></div>
+<div style="margin-bottom:28px"><div style="font-size:12px;color:var(--m);margin-bottom:6px">商务邮箱</div><div style="font-size:15px;color:var(--p3)">ysb@gmkagent.com</div></div>
+<div><div style="font-size:12px;color:var(--m);margin-bottom:6px">核心产品</div><div style="display:flex;flex-wrap:wrap;gap:8px"><span style="padding:4px 12px;background:rgba(91,95,239,.12);border:1px solid rgba(91,95,239,.25);border-radius:6px;font-size:13px;color:var(--p3)">AIBOX</span><span style="padding:4px 12px;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.25);border-radius:6px;font-size:13px;color:var(--a)">AIPC</span><span style="padding:4px 12px;background:rgba(40,200,64,.1);border:1px solid rgba(40,200,64,.25);border-radius:6px;font-size:13px;color:#28C840">工作站</span><span style="padding:4px 12px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.25);border-radius:6px;font-size:13px;color:#a855f7">定制服务</span></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="how section" id="how">
+<div class="container">
+<div class="label">合作流程</div>
+<h2 class="title">四步开启合作</h2>
+<p class="desc">从选型咨询到批量交付，全程专业团队跟进。</p>
+<div class="steps">
+<div class="step"><div class="step-num">1</div><h3 class="step-title">需求沟通</h3><p class="step-desc">联系我们说明应用场景、算力需求、接口要求，我们将在 24 小时内回复并推荐最合适的产品方案。</p></div>
+<div class="step"><div class="step-num">2</div><h3 class="step-title">样机测试</h3><p class="step-desc">提供样机或试用设备，支持远程技术对接，确保产品在实际场景中表现满足预期。</p></div>
+<div class="step"><div class="step-num">3</div><h3 class="step-title">方案定制</h3><p class="step-desc">根据客户需求提供 OEM/ODM 定制服务，包括外观、配置、LOGO、系统镜像等全栈定制。</p></div>
+<div class="step"><div class="step-num">4</div><h3 class="step-title">批量交付</h3><p class="step-desc">签订合同后快速响应，标准品 7 天内发货，定制周期 4~6 周，提供长期质保与售后支持。</p></div>
+</div>
+</div>
+</section>
+<section class="section" id="blog">
+<div class="container">
+<div class="label">资讯博客</div>
+<h2 class="title">最新动态与技术分享</h2>
+<p class="desc">产品发布、行业应用、技术教程，助你深入了解 AI 硬件前沿。</p>
+<div class="blog-grid">
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#1a1f4e,#0d0f1a);">🚀</div>
+<div class="blog-info"><div class="blog-meta"><span class="blog-tag">新品发布</span><span class="blog-date">2026-10-15</span></div>
+<div class="blog-title">AIBOX-V200 发布：算力翻倍，支持 Transformer 实时推理</div>
+<div class="blog-excerpt">全新 AIBOX-V200 搭载 NVIDIA Jetson AGX Orin 64GB，算力达 275 TOPS，支持 INT8/FP16 混合精度推理...</div>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#1f3a1a,#0d1a0d);">💡</div>
+<div class="blog-info"><div class="blog-meta"><span class="blog-tag">技术教程</span><span class="blog-date">2026-10-08</span></div>
+<div class="blog-title">YOLOv8 在 AIBOX 上的部署指南：从环境搭建到实时检测</div>
+<div class="blog-excerpt">本文详细介绍如何在 AIBOX 设备上使用 TensorRT 和 DeepStream 部署 YOLOv8，实现 30fps+ 实时目标检测...</div>
+</div>
+</div>
+<div class="blog-card">
+<div class="blog-img" style="background:linear-gradient(135deg,#3a1f1f,#1a0d0d);">📈</div>
+<div class="blog-info"><div class="blog-meta"><span class="blog-tag">行业洞察</span><span class="blog-date">2026-09-28</span></div>
+<div class="blog-title">2026年 AIPC 市场趋势：NPU 算力从 10 TOPS 到 45 TOPS 的跨越</div>
+<div class="blog-excerpt">随着 Intel Lunar Lake 和 AMD Strix Point 处理器的量产，AIPC 正在从概念走向普及，成为 AI 开发者首选桌面平台...</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="contact">
+<div class="container">
+<div class="cta-banner">
+<h2>需要了解更多产品信息？</h2>
+<p>联系我们获取产品资料、样机支持或定制方案报价</p>
+<div class="cta-actions">
+<a href="mailto:ysb@gmkagent.com" class="btn btn-w">📧 发送邮件</a>
+<a href="#products" class="btn btn-o">查看产品中心</a>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<a href="#" class="logo" style="margin-bottom:4px;"><div class="logo-icon"><img src="images/logo.png" alt="奇点脉冲科技"></div><span>奇点脉冲科技<strong style="color:var(--p3)"> · </strong>启智未来</span></a>
+<p>奇点脉冲科技（深圳）有限公司<br>专注 AIBOX · AIPC · 工作站研发制造，为全球 AI 应用提供可靠算力支撑。</p>
+<div style="margin-top:16px"><a href="mailto:ysb@gmkagent.com" style="font-size:14px;color:var(--p3);">✉️ ysb@gmkagent.com</a></div>
+<div style="margin-top:8px;font-size:14px;color:var(--m)">📍 深圳市龙华区英泰科汇广场2号楼806</div>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">产品</div>
+<div class="footer-links"><a href="#products">AIBOX 算力盒子</a><a href="#products">AIPC 智能计算机</a><a href="#products">AI 工作站</a><a href="#products">定制服务</a></div>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">资源</div>
+<div class="footer-links"><a href="#">技术文档</a><a href="#">SDK 下载</a><a href="#">驱动更新</a><a href="#">FAQ</a></div>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">关于我们</div>
+<div class="footer-links"><a href="#about">公司简介</a><a href="#about">联系我们</a><a href="#">加入团队</a><a href="#">隐私政策</a></div>
+</div>
+<div class="footer-col footer-newsletter">
+<div class="footer-col-title">订阅更新</div>
+<p>获取产品发布与技术资讯</p>
+<form class="newsletter-form" onsubmit="return false;">
+<input type="email" placeholder="输入你的邮箱" />
+<button type="submit">订阅</button>
+</form>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 奇点脉冲科技（深圳）有限公司 Qidian Maichong Technology (Shenzhen) Co., Ltd.</p>
+<div class="footer-social">
+<a href="mailto:ysb@gmkagent.com" title="邮箱">✉️</a>
+<a href="#" title="微信">💬</a>
+<a href="#" title="GitHub">💻</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open')}
+function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open')}
+window.addEventListener('scroll',function(){var h=document.getElementById('header');h.classList.toggle('scrolled',window.scrollY>50)});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+</script>
+</body>
+</html>
